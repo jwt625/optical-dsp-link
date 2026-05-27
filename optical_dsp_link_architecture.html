@@ -324,6 +324,7 @@
     let optics = "cwdm4";
     let hoverBlock = null;
     let detailOpen = false;
+    let renderedDetailHeaderKey = "";
     let activeSignalCard = null;
     let signalCards = [];
     let xSpan = 1;
@@ -1367,6 +1368,9 @@
       const block = blocks.find(item => item.id === activeBlock);
       if (!block) return;
       const info = details[block.detail] || details.placeholder;
+      const headerKey = `${activeBlock}|${info.title}|${info.note}|${info.links.map(link => `${link.label}:${link.href}`).join(",")}`;
+      if (headerKey === renderedDetailHeaderKey) return;
+      renderedDetailHeaderKey = headerKey;
       document.getElementById("detailTitle").textContent = info.title;
       document.getElementById("detailNote").textContent = info.note;
       const actions = document.getElementById("detailActions");
@@ -1497,6 +1501,7 @@
       activeBlock = block.id;
       detailOpen = true;
       document.getElementById("detailSection").style.display = "";
+      updateDetailHeader();
       drawAll();
     });
     architectureCanvas.addEventListener("mousemove", evt => {
