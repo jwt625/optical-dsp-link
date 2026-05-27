@@ -1376,6 +1376,10 @@
         a.className = "button";
         a.href = link.href;
         a.textContent = link.label;
+        a.addEventListener("click", evt => {
+          evt.preventDefault();
+          window.location.assign(new URL(link.href, window.location.href).href);
+        });
         actions.appendChild(a);
       }
     }
