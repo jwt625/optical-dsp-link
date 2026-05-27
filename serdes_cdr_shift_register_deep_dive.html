@@ -57,17 +57,15 @@
       gap: 8px;
       align-items: center;
     }
-    button, label.toggle, select, a.button {
+    button, label.toggle, select {
       border: 1px solid #3a4658;
       background: var(--control);
       border-radius: 0;
       padding: 7px 10px;
       cursor: pointer;
       color: var(--ink);
-      text-decoration: none;
-      font: inherit;
     }
-    button:hover, label.toggle:hover, select:hover, a.button:hover { border-color: var(--accent); }
+    button:hover, label.toggle:hover, select:hover { border-color: var(--accent); }
     label.toggle {
       display: inline-flex;
       gap: 6px;
@@ -114,7 +112,6 @@
       <div class="facts">Behavioral mixed-signal view: UI = 8.93 ps, 16 UI word = 143 ps. New samples enter at right.</div>
     </div>
     <div class="controls">
-      <a class="button" href="index.html">Architecture Overview</a>
       <button id="pause">Pause</button>
       <button id="resetCdr">Reset CDR</button>
       <button id="phaseStep">Inject Phase Step</button>

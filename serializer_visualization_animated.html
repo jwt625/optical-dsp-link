@@ -56,17 +56,15 @@
       gap: 8px;
       align-items: center;
     }
-    button, label.toggle, a.button {
+    button, label.toggle {
       border: 1px solid #3a4658;
       background: var(--control);
       border-radius: 0;
       padding: 7px 10px;
       cursor: pointer;
       color: var(--ink);
-      text-decoration: none;
-      font: inherit;
     }
-    button:hover, label.toggle:hover, a.button:hover { border-color: var(--accent); }
+    button:hover, label.toggle:hover { border-color: var(--accent); }
     button.active {
       border-color: var(--accent);
       background: #1b2b42;
@@ -130,7 +128,6 @@
       <div class="facts">Rolling oscilloscope-style view: new samples enter at right, older waveform history moves left. UI = 8.93 ps. Word period = 143 ps.</div>
     </div>
     <div class="controls">
-      <a class="button" href="index.html">Architecture Overview</a>
       <button id="serializerTab" class="active">Serializer</button>
       <button id="deserializerTab">Deserializer</button>
       <button id="pause">Pause</button>
